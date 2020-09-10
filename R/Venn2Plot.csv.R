@@ -47,7 +47,7 @@ function(listG1, listG2,listNames,filename,data4T= NULL, symbols=TRUE, img.fmt =
     options( java.parameters = "-Xmx4g" ) #super important abans de cridar a XLConnect
     require(XLConnect)
     xlcFreeMemory()
-    cNames <- colnames(data4T)[-grep("scaled$", colnames(data4T))]
+    cNames <- colnames(data4T)[!colnames(data4T) %in% grep("scaled$", colnames(data4T), value=T)]
     
     if (symbols) {
       wb <- loadWorkbook(file.path(resultsDir,paste("VennGenes",filename,"xlsx",sep=".")),create=TRUE)
@@ -87,7 +87,7 @@ function(listG1, listG2,listNames,filename,data4T= NULL, symbols=TRUE, img.fmt =
     }
   }
   if(mkCSV){
-    cNames <- colnames(data4T)[-grep("scaled$", colnames(data4T))]
+    cNames <- colnames(data4T)[!colnames(data4T) %in% grep("scaled$", colnames(data4T), value=T)]
     
     if (symbols) {
       write.csv2(data4T[(!is.na(data4T[,colnmes[2]])) & 
