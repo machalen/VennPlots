@@ -93,20 +93,20 @@ function(listG1, listG2,listNames,filename,data4T= NULL, symbols=TRUE, img.fmt =
       write.csv2(data4T[(!is.na(data4T[,colnmes[2]])) & 
                           (data4T[,colnmes[2]] %in% unlist(vtest@IntersectionSets$`10`)) & 
                           (data4T[,colnmes[1]] %in% listG1[,colnmes[1]]), cNames],
-                 file= file.path(resultsDir,paste("VennGenes",listNames[1],"csv",sep=".")),
+                 file= file.path(resultsDir,paste("VennGenes",filename,listNames[1],"csv",sep=".")),
                  row.names = FALSE)
       
       write.csv2(data4T[(!is.na(data4T[,colnmes[2]])) & 
                           (data4T[,colnmes[2]] %in% unlist(vtest@IntersectionSets$`01`)) & 
                           (data4T[,colnmes[1]] %in% listG2[,colnmes[1]]), cNames],
-                 file= file.path(resultsDir,paste("VennGenes",listNames[2],"csv",sep=".")),
+                 file= file.path(resultsDir,paste("VennGenes",filename,listNames[2],"csv",sep=".")),
                  row.names = FALSE)
       
       write.csv2(data4T[(!is.na(data4T[,colnmes[2]])) & 
                           (data4T[,colnmes[2]] %in% unlist(vtest@IntersectionSets$`11`)) & 
                           (data4T[,colnmes[1]] %in% listG1[,colnmes[1]]) & (data4T[,colnmes[1]] %in% listG2[,colnmes[1]]), 
                         cNames],
-                 file= file.path(resultsDir,paste("VennGenes","Common","csv",sep=".")),
+                 file= file.path(resultsDir,paste("VennGenes",filename,"Common","csv",sep=".")),
                  row.names = FALSE)
       
     }else {
