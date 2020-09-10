@@ -139,37 +139,37 @@ function(listG1, listG2, listG3, listNames,filename ,data4T= NULL, symbols=TRUE,
       
       write.csv2(data4T[!is.na(data4T[,colnmes[2]]) & (data4T[,colnmes[2]] %in% unlist(vtest@IntersectionSets$`100`)) & 
                           (data4T[,colnmes[1]] %in% listG1[,colnmes[1]]), cNames],
-                 file= file.path(resultsDir,paste("VennGenes","orange","csv",sep=".")),
+                 file= file.path(resultsDir,paste("VennGenes",filename,"orange","csv",sep=".")),
                  row.names = FALSE)
       write.csv2(data4T[!is.na(data4T[,colnmes[2]]) & (data4T[,colnmes[2]] %in% unlist(vtest@IntersectionSets$`010`)) & 
                           (data4T[,colnmes[1]] %in% listG2[,colnmes[1]]),cNames],
-                 file= file.path(resultsDir,paste("VennGenes","blue","csv",sep=".")),
+                 file= file.path(resultsDir,paste("VennGenes",filename,"blue","csv",sep=".")),
                  row.names = FALSE)
       write.csv2(data4T[!is.na(data4T[,colnmes[2]]) & (data4T[,colnmes[2]] %in% unlist(vtest@IntersectionSets$`001`)) & 
                           (data4T[,colnmes[1]] %in% listG3[,colnmes[1]]), cNames],
-                 file= file.path(resultsDir,paste("VennGenes","green","csv",sep=".")),
+                 file= file.path(resultsDir,paste("VennGenes",filename,"green","csv",sep=".")),
                  row.names = FALSE)
       write.csv2(data4T[!is.na(data4T[,colnmes[2]]) & (data4T[,colnmes[2]] %in% unlist(vtest@IntersectionSets$`110`)) & 
                           (data4T[,colnmes[1]] %in% listG1[,colnmes[1]]) &
                           (data4T[,colnmes[1]] %in% listG2[,colnmes[1]]), cNames],
-                 file= file.path(resultsDir,paste("VennGenes","pink","csv",sep=".")),
+                 file= file.path(resultsDir,paste("VennGenes",filename,"pink","csv",sep=".")),
                  row.names = FALSE)
       write.csv2(data4T[!is.na(data4T[,colnmes[2]]) & (data4T[,colnmes[2]] %in% unlist(vtest@IntersectionSets$`011`)) & 
                           (data4T[,colnmes[1]] %in% listG2[,colnmes[1]]) &
                           (data4T[,colnmes[1]] %in% listG3[,colnmes[1]]), cNames],
-                 file= file.path(resultsDir,paste("VennGenes","brown","csv",sep=".")),
+                 file= file.path(resultsDir,paste("VennGenes",filename,"brown","csv",sep=".")),
                  row.names = FALSE)
       
       write.csv2(data4T[!is.na(data4T[,colnmes[2]]) & (data4T[,colnmes[2]] %in% unlist(vtest@IntersectionSets$`101`)) & 
                           (data4T[,colnmes[1]] %in% listG1[,colnmes[1]]) &
                           (data4T[,colnmes[1]] %in% listG3[,colnmes[1]]), cNames],
-                 file= file.path(resultsDir,paste("VennGenes","yellow","csv",sep=".")),
+                 file= file.path(resultsDir,paste("VennGenes",filename,"yellow","csv",sep=".")),
                  row.names = FALSE)
       write.csv2(data4T[!is.na(data4T[,colnmes[2]]) & (data4T[,colnmes[2]] %in% unlist(vtest@IntersectionSets$`111`)) &
                           (data4T[,colnmes[1]] %in% listG1[,colnmes[1]]) &
                           (data4T[,colnmes[1]] %in% listG2[,colnmes[1]]) &
                           (data4T[,colnmes[1]] %in% listG3[,colnmes[1]]),cNames],
-                 file= file.path(resultsDir,paste("VennGenes","CommonGrey","csv",sep=".")),
+                 file= file.path(resultsDir,paste("VennGenes",filename,"CommonGrey","csv",sep=".")),
                  row.names = FALSE)
       
     }else{
