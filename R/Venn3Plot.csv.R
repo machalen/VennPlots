@@ -50,7 +50,7 @@ function(listG1, listG2, listG3, listNames,filename ,data4T= NULL, symbols=TRUE,
     options( java.parameters = "-Xmx4g" ) #super important abans de cridar a XLConnect
     require(XLConnect)
     xlcFreeMemory()
-    cNames <- colnames(data4T)[-grep("scaled$", colnames(data4T))]
+    colnames(data4T)[!colnames(data4T) %in% grep("scaled$", colnames(data4T), value=T)]
     
     if(symbols){
       wb <- loadWorkbook(file.path(resultsDir,paste("GeneLists",filename,".xlsx",sep=".")),create=TRUE) #no li agraden els espais al nom o noms llargs!
@@ -133,7 +133,7 @@ function(listG1, listG2, listG3, listNames,filename ,data4T= NULL, symbols=TRUE,
     }
   }
   if(mkCSV){
-    cNames <- colnames(data4T)[-grep("scaled$", colnames(data4T))]
+    colnames(data4T)[!colnames(data4T) %in% grep("scaled$", colnames(data4T), value=T)]
     
     if(symbols){
       
